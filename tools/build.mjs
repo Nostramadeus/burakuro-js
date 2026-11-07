@@ -25,16 +25,16 @@ let sound = rename(cut('/*! sound emotes start */', '/*! sound emotes end */'));
 const SOUNDS = [
     ['/doroclapsound', '/doroclap', 'doroclapsound.mp3', 'clapping (same sound as pinoko.moe and wideamari)'],
     ['/laughsound', '/laugh', 'laughsound.mp3', 'laugh (same sound as pinoko.moe)'],
-    ['/yamibreaksound', '/yamibreak', 'yamibreaksound.mp3', 'Yami: "You look like you need a break"'],
-    ['/yamilimitsound', '/yamilimit', 'yamilimitsound.mp3', 'Yami: "You\'ve gotta break past your limits, that\'s the only way!"'],
-    ['/yamiwahahasound', '/yamiwahaha', 'yamiwahahasound.mp3', 'Yami: "Wahahaha! What a blast!"'],
-    ['/astagiveupsound', '/astagiveup', 'astagiveupsound.mp3', 'Asta: "I\'ll never give up!"'],
-    ['/yunodebtsound', '/yunodebt', 'yunodebtsound.mp3', 'Yuno: "I thought I\'d finally returned the favor"'],
-    ['/luckfunsound', '/luckfun', 'luckfunsound.mp3', 'Luck: "Don\'t finish yet, I\'m having fun!"'],
-    ['/charmyhungrysound', '/charmyhungry', 'charmyhungrysound.mp3', 'Charmy: "I... I\'m so hungry... Can\'t move..."'],
-    ['/vanessadrinksound', '/vanessadrink', 'vanessadrinksound.mp3', 'Vanessa: "Let\'s have a drink!"'],
-    ['/mereoleonasound', '/mereoleona', 'mereoleonasound.mp3', 'Mereoleona: "I will show you how a lion hunts!"'],
-    ['/magnacoolsound', '/magnacool', 'magnacoolsound.mp3', 'Magna: "So cool!"'],
+    ['/yamitakeabreaksound', '/yamitakeabreak', 'yamitakeabreaksound.mp3', 'Yami: "You look like you need a break"'],
+    ['/yamisurpassyourlimitssound', '/yamisurpassyourlimits', 'yamisurpassyourlimitssound.mp3', 'Yami: "You\'ve gotta break past your limits, that\'s the only way!"'],
+    ['/yamilaughwahahasound', '/yamilaughwahaha', 'yamilaughwahahasound.mp3', 'Yami: "Wahahaha! What a blast!"'],
+    ['/astanevergivingupismymagicsound', '/astanevergivingupismymagic', 'astanevergivingupismymagicsound.mp3', 'Asta: "I\'ll never give up!"'],
+    ['/yunorepaidmydebtsound', '/yunorepaidmydebt', 'yunorepaidmydebtsound.mp3', 'Yuno: "I thought I\'d finally returned the favor"'],
+    ['/lucklooksfunsound', '/lucklooksfun', 'lucklooksfunsound.mp3', 'Luck: "Don\'t finish yet, I\'m having fun!"'],
+    ['/charmyimhungrysound', '/charmyimhungry', 'charmyimhungrysound.mp3', 'Charmy: "I... I\'m so hungry... Can\'t move..."'],
+    ['/vanessaletsgodrinkingsound', '/vanessaletsgodrinking', 'vanessaletsgodrinkingsound.mp3', 'Vanessa: "Let\'s have a drink!"'],
+    ['/mereoleonaleaveittomesound', '/mereoleonaleaveittome', 'mereoleonaleaveittomesound.mp3', 'Mereoleona: "Leave it to me, Wizard King!"'],
+    ['/magnanotbadsound', '/magnanotbad', 'magnanotbadsound.mp3', 'Magna: "So cool!"'],
 ];
 const list = SOUNDS.map(([n, l, f, what]) =>
     `        { name: '${n}', look: '${l}', url: '${BASE}sounds/${f}' }, // ${what}`).join('\n');

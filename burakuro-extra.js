@@ -632,16 +632,16 @@ document.head.append(s)
     var SOUNDS = [
         { name: '/doroclapsound', look: '/doroclap', url: 'https://nostramadeus.github.io/burakuro-js/sounds/doroclapsound.mp3' }, // clapping (same sound as pinoko.moe and wideamari)
         { name: '/laughsound', look: '/laugh', url: 'https://nostramadeus.github.io/burakuro-js/sounds/laughsound.mp3' }, // laugh (same sound as pinoko.moe)
-        { name: '/yamibreaksound', look: '/yamibreak', url: 'https://nostramadeus.github.io/burakuro-js/sounds/yamibreaksound.mp3' }, // Yami: "You look like you need a break"
-        { name: '/yamilimitsound', look: '/yamilimit', url: 'https://nostramadeus.github.io/burakuro-js/sounds/yamilimitsound.mp3' }, // Yami: "You've gotta break past your limits, that's the only way!"
-        { name: '/yamiwahahasound', look: '/yamiwahaha', url: 'https://nostramadeus.github.io/burakuro-js/sounds/yamiwahahasound.mp3' }, // Yami: "Wahahaha! What a blast!"
-        { name: '/astagiveupsound', look: '/astagiveup', url: 'https://nostramadeus.github.io/burakuro-js/sounds/astagiveupsound.mp3' }, // Asta: "I'll never give up!"
-        { name: '/yunodebtsound', look: '/yunodebt', url: 'https://nostramadeus.github.io/burakuro-js/sounds/yunodebtsound.mp3' }, // Yuno: "I thought I'd finally returned the favor"
-        { name: '/luckfunsound', look: '/luckfun', url: 'https://nostramadeus.github.io/burakuro-js/sounds/luckfunsound.mp3' }, // Luck: "Don't finish yet, I'm having fun!"
-        { name: '/charmyhungrysound', look: '/charmyhungry', url: 'https://nostramadeus.github.io/burakuro-js/sounds/charmyhungrysound.mp3' }, // Charmy: "I... I'm so hungry... Can't move..."
-        { name: '/vanessadrinksound', look: '/vanessadrink', url: 'https://nostramadeus.github.io/burakuro-js/sounds/vanessadrinksound.mp3' }, // Vanessa: "Let's have a drink!"
-        { name: '/mereoleonasound', look: '/mereoleona', url: 'https://nostramadeus.github.io/burakuro-js/sounds/mereoleonasound.mp3' }, // Mereoleona: "I will show you how a lion hunts!"
-        { name: '/magnacoolsound', look: '/magnacool', url: 'https://nostramadeus.github.io/burakuro-js/sounds/magnacoolsound.mp3' }, // Magna: "So cool!"
+        { name: '/yamitakeabreaksound', look: '/yamitakeabreak', url: 'https://nostramadeus.github.io/burakuro-js/sounds/yamitakeabreaksound.mp3' }, // Yami: "You look like you need a break"
+        { name: '/yamisurpassyourlimitssound', look: '/yamisurpassyourlimits', url: 'https://nostramadeus.github.io/burakuro-js/sounds/yamisurpassyourlimitssound.mp3' }, // Yami: "You've gotta break past your limits, that's the only way!"
+        { name: '/yamilaughwahahasound', look: '/yamilaughwahaha', url: 'https://nostramadeus.github.io/burakuro-js/sounds/yamilaughwahahasound.mp3' }, // Yami: "Wahahaha! What a blast!"
+        { name: '/astanevergivingupismymagicsound', look: '/astanevergivingupismymagic', url: 'https://nostramadeus.github.io/burakuro-js/sounds/astanevergivingupismymagicsound.mp3' }, // Asta: "I'll never give up!"
+        { name: '/yunorepaidmydebtsound', look: '/yunorepaidmydebt', url: 'https://nostramadeus.github.io/burakuro-js/sounds/yunorepaidmydebtsound.mp3' }, // Yuno: "I thought I'd finally returned the favor"
+        { name: '/lucklooksfunsound', look: '/lucklooksfun', url: 'https://nostramadeus.github.io/burakuro-js/sounds/lucklooksfunsound.mp3' }, // Luck: "Don't finish yet, I'm having fun!"
+        { name: '/charmyimhungrysound', look: '/charmyimhungry', url: 'https://nostramadeus.github.io/burakuro-js/sounds/charmyimhungrysound.mp3' }, // Charmy: "I... I'm so hungry... Can't move..."
+        { name: '/vanessaletsgodrinkingsound', look: '/vanessaletsgodrinking', url: 'https://nostramadeus.github.io/burakuro-js/sounds/vanessaletsgodrinkingsound.mp3' }, // Vanessa: "Let's have a drink!"
+        { name: '/mereoleonaleaveittomesound', look: '/mereoleonaleaveittome', url: 'https://nostramadeus.github.io/burakuro-js/sounds/mereoleonaleaveittomesound.mp3' }, // Mereoleona: "Leave it to me, Wizard King!"
+        { name: '/magnanotbadsound', look: '/magnanotbad', url: 'https://nostramadeus.github.io/burakuro-js/sounds/magnanotbadsound.mp3' }, // Magna: "So cool!"
         // { emote: '/doroclap', url: 'https://files.catbox.moe/xxxxxx.mp3' },
     ];
 

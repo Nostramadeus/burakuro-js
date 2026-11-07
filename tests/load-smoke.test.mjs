@@ -22,7 +22,7 @@ w.socket = { on(ev, f) { (handlers[ev] = handlers[ev] || []).push(f); }, off() {
 // jQuery: only what the channel JS calls ($(window).bind, $.get).
 w.eval(`var $ = function (x) { return { bind: function (ev, f) { (x.addEventListener ? x : window).addEventListener(ev, f); return this; }, on: function () { return this; } }; };
   $.get = function () {};`);
-const emotes = ['/doroclap', '/laugh', '/yamibreak', '/yamimad', '/noellepout'].map(n => ({ name: n, image: 'https://example.invalid' + n + '.png', source: '(^|\\s)' + n + '(?!\\S)' }));
+const emotes = ['/doroclap', '/laugh', '/yamitakeabreak', '/yamimad', '/noellepout'].map(n => ({ name: n, image: 'https://example.invalid' + n + '.png', source: '(^|\\s)' + n + '(?!\\S)' }));
 w.CHANNEL = { name: 'burakuro', emotes, emoteMap: Object.fromEntries(emotes.map(e => [e.name, e])), badEmotes: [] };
 w.USEROPTS = { no_emotes: false }; w.IGNORED = []; w.CLIENT = { name: 'tester', rank: 1 };
 w.Callbacks = { newPoll() {}, updatePoll() {}, chatMsg() {} };
@@ -37,7 +37,7 @@ const api = w.__burakuroSound;
 check('sound api exposed', !!api && typeof api.soundOnlyEmotes === 'function');
 const names = api ? api.soundOnlyEmotes().map(e => e.name) : [];
 check('12 sound-only names listed', names.length === 12, names);
-check('/yamibreaksound borrows /yamibreak', names.includes('/yamibreaksound'));
+check('/yamitakeabreaksound borrows /yamitakeabreak', names.includes('/yamitakeabreaksound'));
 const live = code.slice(code.indexOf('var SOUNDS'), code.indexOf('];', code.indexOf('var SOUNDS'))).split('\n').filter(l => /^\s*\{/.test(l));
 check('12 live SOUNDS lines, all on GitHub Pages', live.length === 12 && live.every(l => l.includes("url: 'https://nostramadeus.github.io/burakuro-js/sounds/")), live);
 check('chat listener registered', (handlers.chatMsg || []).length >= 1);

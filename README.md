@@ -15,7 +15,7 @@ Extra JavaScript for the cytu.be channel **burakuro**.
 - Clock above the chat (local time and UTC), favicon, Ctrl+A (select chat line), Ctrl+S (wrap in a spoiler).
 - Playlist start times: every queued video shows the clock time it will start.
 - "/" emote dropdown: typing `/no` opens a picture list of matching emotes; arrow keys + Enter pick one.
-- Sound emotes: posting a sound name (for example `/yamibreaksound`) shows the borrowed emote picture with a gold border and plays the clip for everyone. The 🔊 button next to the emote button turns sounds on or off and sets the volume (saved per browser).
+- Sound emotes: posting a sound name (for example `/yamitakeabreaksound`) shows the borrowed emote picture with a gold border and plays the clip for everyone. The 🔊 button next to the emote button turns sounds on or off and sets the volume (saved per browser).
 
 ## Sounds
 
@@ -23,16 +23,16 @@ Extra JavaScript for the cytu.be channel **burakuro**.
 |---|---|---|
 | `/doroclapsound` | `/doroclap` | clapping |
 | `/laughsound` | `/laugh` | laugh |
-| `/yamibreaksound` | `/yamibreak` | Yami: "You look like you need a break" |
-| `/yamilimitsound` | `/yamilimit` | Yami: "You've gotta break past your limits, that's the only way!" |
-| `/yamiwahahasound` | `/yamiwahaha` | Yami: "Wahahaha! What a blast!" |
-| `/astagiveupsound` | `/astagiveup` | Asta: "I'll never give up!" |
-| `/yunodebtsound` | `/yunodebt` | Yuno: "I thought I'd finally returned the favor" |
-| `/luckfunsound` | `/luckfun` | Luck: "Don't finish yet, I'm having fun!" |
-| `/charmyhungrysound` | `/charmyhungry` | Charmy: "I... I'm so hungry... Can't move..." |
-| `/vanessadrinksound` | `/vanessadrink` | Vanessa: "Let's have a drink!" |
-| `/mereoleonasound` | `/mereoleona` | Mereoleona: "I will show you how a lion hunts!" |
-| `/magnacoolsound` | `/magnacool` | Magna: "So cool!" |
+| `/yamitakeabreaksound` | `/yamitakeabreak` | Yami: "You look like you need a break" |
+| `/yamisurpassyourlimitssound` | `/yamisurpassyourlimits` | Yami: "You've gotta break past your limits, that's the only way!" |
+| `/yamilaughwahahasound` | `/yamilaughwahaha` | Yami: "Wahahaha! What a blast!" |
+| `/astanevergivingupismymagicsound` | `/astanevergivingupismymagic` | Asta: "I'll never give up!" |
+| `/yunorepaidmydebtsound` | `/yunorepaidmydebt` | Yuno: "I thought I'd finally returned the favor" |
+| `/lucklooksfunsound` | `/lucklooksfun` | Luck: "Don't finish yet, I'm having fun!" |
+| `/charmyimhungrysound` | `/charmyimhungry` | Charmy: "I... I'm so hungry... Can't move..." |
+| `/vanessaletsgodrinkingsound` | `/vanessaletsgodrinking` | Vanessa: "Let's have a drink!" |
+| `/mereoleonaleaveittomesound` | `/mereoleonaleaveittome` | Mereoleona: "Leave it to me, Wizard King!" |
+| `/magnanotbadsound` | `/magnanotbad` | Magna: "So cool!" |
 
 ## Adding a sound
 
