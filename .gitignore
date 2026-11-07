@@ -1,0 +1,13 @@
+# Whitelist: only these paths are public.
+/*
+!/.gitignore
+!/README.md
+!/burakuro-extra.js
+!/channel-js.js
+!/sounds/
+!/emotes/
+!/backup/
+!/tests/
+!/tools/
+/tools/*
+!/tools/build.mjs

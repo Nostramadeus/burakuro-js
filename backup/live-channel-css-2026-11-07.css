@@ -1,0 +1,270 @@
+#chatheader, #videowrap-header, #messagebuffer, #userlist, #plmeta, #queue_entry pluid-0 {
+    background-color: #1F2126;
+}
+
+/*#chatheader, #videowrap-header, #plmeta, #queue_entry pluid-0 {
+      
+}*/
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://files.catbox.moe/xonrf3.webp);
+    background-position: center;
+}  /*https://pomf2.lain.la/f/9syb3xho.png https://files.catbox.moe/jvybp7.png https://files.catbox.moe/4w5fws.png https://files.catbox.moe/bk2xyc.png https://files.catbox.moe/xurumh.png*/
+
+.navbar-fixed-bottom, .navbar-fixed-top {
+  position: unset;
+}
+
+#mainpage {
+  padding-top: 0px;
+}
+
+
+#messagebuffer, #userlist, #chatheader {
+  background-color: rgba(18,20,34,0.8);
+}
+
+.form-control {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.nick-hover {
+  background-color: rgba(255,140,180,0.05) !important;
+}
+
+ .chat-iframe {
+ width:360px;
+ height:350px;
+ border:none;
+ }
+
+
+
+
+.chat-msg-WidestMariposter .username
+{    
+color:  #fcf2ab;    
+} 
+
+.chat-msg-Awaclus .username
+{    
+color:  #b10000;    
+} 
+
+.chat-msg-Calvatres .username {
+     color: #55c9b6;
+}
+
+.chat-msg-nks .username {
+     color: #00D4F2;
+}
+
+.chat-msg-Flowboat .username {
+     color: #01b5f1;
+}
+
+.chat-msg-Duelist .username {
+    color: #ADFF2F;
+    /* color: #FFFFFF; */
+}
+
+.chat-msg-StupidRat .username {
+    color: brown;
+}
+
+.chat-msg-KotohaCute .username {
+    color: #C2B2F1;
+}
+
+.chat-msg-TheCubicPill .username {
+    color: yellow;
+}
+
+.chat-msg-TikiTang .username {
+    color: pink;
+}
+
+.chat-msg-b34ners .username {
+    color: green;
+}
+
+.chat-msg-pidewoster .username {
+    color: #FFFFFF;
+}
+
+.chat-msg-BackFrom6Years .username {
+    color: #400021;
+}
+
+.chat-msg-Kaibasdaughter .username {
+    color: #FF69B4;
+    /* color: #FFFFFF; */
+}
+
+.chat-msg-heckkaiser .username {
+    color: #9370DB;
+    /* color: #FFFFFF; */
+}
+
+.chat-msg-AlwaysKnown .username {
+    color: #7FFFD4;
+}
+
+.chat-msg-Niffie .username {
+    color: #f2b7bb;
+}
+
+.chat-msg-kaiserchad .username {
+    color: yellow;
+}
+
+.chat-msg-whatsausername .username {
+     color:  #FF0000;
+     /* color:  #FFFFFF; */
+}
+
+.chat-msg-Riku_Aganeia .username {
+    color: #00FFFF;
+}
+
+.chat-msg-Sorafriend .username {
+    color: #ADD8E6;
+}
+
+.chat-msg-Fortuneman .username {
+    color: #577A26;
+    /* color: #FFFFFF; */
+}
+
+.chat-msg-RyCHADtheO .username {
+    color: #185A76;
+}
+
+.chat-msg-IkaCutesume .username {
+    color: #27639d;
+    /* color: #ffffff; */
+}
+
+.chat-msg-kakowarai .username {
+    color: #7b6aae;
+}
+
+.chat-msg-VirginHero .username {
+    color: #adff99;
+}
+
+.chat-msg-Bank .username {
+    color: white;
+}
+
+.chat-msg-Notbank .username {
+    color: white;
+}
+
+.chat-msg-SeanBateman .username {
+    color: white;
+}
+
+.chat-msg-Starchnon .username {
+    color: #b79268;
+}
+
+.chat-msg-Hidaman .username {
+    color: #00308F;
+}
+
+.chat-msg-yunose .username {
+    color: #CCCCFF;
+}
+
+.chat-msg-wideposter .username {
+    color: orange;
+}
+
+.chat-msg-YuyuLover .username {
+    color: #e10111;
+}
+
+.chat-msg-Sylvis .username {
+    color: #ff99e0;
+}
+
+.chat-msg-ROROfag .username {
+    color: #e0ff00;
+}
+
+.chat-msg-VanDine .username {
+    color: #C01427;
+}
+
+.chat-msg-DeaconofSlaanesh .username {
+    color: #E31C78;
+}
+
+.chat-msg-bennyharveyrip .username {
+    color: #00AA33;
+}
+
+.chat-msg-Mondork .username {
+    color: #c94204;
+}
+
+.userlist_owner {
+    color: #c8c8c8 !important;
+}
+@keyframes tilt-n-move-shaking {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(0.5px, 0.55px) rotate(0.5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-0.5px, 0.5px) rotate(-0.5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+.channel-emote[src="https://files.catbox.moe/3tjr22.gif"] {
+    display: block;
+    position: relative;
+    animation: tilt-n-move-shaking 0.3s linear infinite;
+}
+@keyframes roll-normal-align {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes bounce {
+  0% {left: 0;}
+  48% {transform: rotateY(0deg);}
+  50% {left: calc(100% - 100px);transform: rotateY(180deg);}
+  98% {transform: rotateY(180deg);}
+  100% {left: 0;transform: rotateY(0deg);}
+}
+
+.channel-emote[src="https://file.garden/ZTXbQDxGwQaUm7t-/ezgif.com-reverse.gif"] {
+    display: block;
+    position: relative;
+    animation: roll-normal-align 3s linear infinite;
+}
+
+.channel-emote[src="https://https://files.catbox.moe/ul6shy.gif"] {
+    display: block;
+    position: relative;
+    animation: roll-normal-align 3s linear infinite;
+}
+
+.channel-emote[src="https://pomf2.lain.la/f/rocbfgyf.png"] {
+    display: block;
+    position: relative;
+    animation: linear infinite bounce 3s;
+}
+
+[class^="chat-msg-"] .channel-emote {
+  max-height: 100px;
+  width: auto;  /* Let the browser auto-scale width to keep aspect ratio */
+  height: auto; /* Keep height automatic so it never stretches vertically */
+}
+
+#footer {
+    background: rgba(0,0,0,0)!important;
+}
