@@ -642,6 +642,8 @@ document.head.append(s)
         { name: '/vanessaletsgodrinkingsound', look: '/vanessaletsgodrinking', url: 'https://nostramadeus.github.io/burakuro-js/sounds/vanessaletsgodrinkingsound.mp3' }, // Vanessa: "Let's have a drink!"
         { name: '/mereoleonaleaveittomesound', look: '/mereoleonaleaveittome', url: 'https://nostramadeus.github.io/burakuro-js/sounds/mereoleonaleaveittomesound.mp3' }, // Mereoleona: "Leave it to me, Wizard King!"
         { name: '/magnanotbadsound', look: '/magnanotbad', url: 'https://nostramadeus.github.io/burakuro-js/sounds/magnanotbadsound.mp3' }, // Magna: "So cool!"
+        { name: '/charlottebadumpheartbeatsound', look: '/charlottescreaming', url: 'https://nostramadeus.github.io/burakuro-js/sounds/charlottebadumpheartbeatsound.mp3' }, // Charlotte: "*Ba-dump*" (heartbeat)
+        { name: '/charlotteyyyamisound', look: '/charlotteyamiwallpin', url: 'https://nostramadeus.github.io/burakuro-js/sounds/charlotteyyyamisound.mp3' }, // Charlotte: "Y-Y-Yami?!"
         // { emote: '/doroclap', url: 'https://files.catbox.moe/xxxxxx.mp3' },
     ];
 

@@ -35,6 +35,8 @@ const SOUNDS = [
     ['/vanessaletsgodrinkingsound', '/vanessaletsgodrinking', 'vanessaletsgodrinkingsound.mp3', 'Vanessa: "Let\'s have a drink!"'],
     ['/mereoleonaleaveittomesound', '/mereoleonaleaveittome', 'mereoleonaleaveittomesound.mp3', 'Mereoleona: "Leave it to me, Wizard King!"'],
     ['/magnanotbadsound', '/magnanotbad', 'magnanotbadsound.mp3', 'Magna: "So cool!"'],
+    ['/charlottebadumpheartbeatsound', '/charlottescreaming', 'charlottebadumpheartbeatsound.mp3', 'Charlotte: "*Ba-dump*" (heartbeat)'],
+    ['/charlotteyyyamisound', '/charlotteyamiwallpin', 'charlotteyyyamisound.mp3', 'Charlotte: "Y-Y-Yami?!"'],
 ];
 const list = SOUNDS.map(([n, l, f, what]) =>
     `        { name: '${n}', look: '${l}', url: '${BASE}sounds/${f}' }, // ${what}`).join('\n');

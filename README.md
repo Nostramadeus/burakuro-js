@@ -33,6 +33,8 @@ Extra JavaScript for the cytu.be channel **burakuro**.
 | `/vanessaletsgodrinkingsound` | `/vanessaletsgodrinking` | Vanessa: "Let's have a drink!" |
 | `/mereoleonaleaveittomesound` | `/mereoleonaleaveittome` | Mereoleona: "Leave it to me, Wizard King!" |
 | `/magnanotbadsound` | `/magnanotbad` | Magna: "So cool!" |
+| `/charlottebadumpheartbeatsound` | `/charlottescreaming` | Charlotte: "*Ba-dump*" (heartbeat) |
+| `/charlotteyyyamisound` | `/charlotteyamiwallpin` | Charlotte: "Y-Y-Yami?!" |
 
 ## Adding a sound
 
