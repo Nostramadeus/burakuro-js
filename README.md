@@ -15,7 +15,7 @@ Extra JavaScript for the cytu.be channel **burakuro**.
 - Clock above the chat (local time and UTC), favicon, Ctrl+A (select chat line), Ctrl+S (wrap in a spoiler).
 - Playlist start times: every queued video shows the clock time it will start.
 - "/" emote dropdown: typing `/no` opens a picture list of matching emotes; arrow keys + Enter pick one.
-- Sound emotes: posting a sound name (for example `/yamitakeabreaksound`) shows the borrowed emote picture with a gold border and plays the clip for everyone. The 🔊 button next to the emote button turns sounds on or off and sets the volume (saved per browser).
+- Sound emotes: posting a sound name (for example `/yamitakeabreaksound`) shows the borrowed emote picture with a gold border and plays the clip for everyone. The "🔊 Sounds" button next to the emote button lists every sound emote (click a name to put it in the chat line, ▶ to hear it yourself) and turns sounds on or off / sets the volume (saved per browser).
 
 ## Sounds
 

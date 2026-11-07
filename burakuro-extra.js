@@ -918,13 +918,20 @@ document.head.append(s)
     style.id = 'burakuro-sound-style';
     style.textContent = [
         'img.channel-emote.burakuro-sound-emote{border:2px solid #e6b422;border-radius:4px;}',
-        '#burakuro-sound-panel{position:fixed;z-index:10000;width:200px;box-sizing:border-box;padding:8px 10px;',
+        '#burakuro-sound-panel{position:fixed;z-index:10000;width:300px;box-sizing:border-box;padding:8px 10px;',
         'color:#eee;background:#1b1b1f;border:1px solid #000;border-radius:4px;box-shadow:0 6px 16px rgba(0,0,0,.55);font-size:14px;}',
         '#burakuro-sound-panel[hidden]{display:none;}',
         '#burakuro-sound-panel label{display:flex;align-items:center;gap:6px;margin:0 0 6px;font-weight:400;cursor:pointer;}',
         '#burakuro-sound-panel .burakuro-sound-volume{display:flex;align-items:center;gap:6px;}',
         '#burakuro-sound-panel input[type=range]{flex:1;min-width:0;margin:0;}',
-        '#burakuro-sound-panel .burakuro-sound-value{width:3em;text-align:right;}'
+        '#burakuro-sound-panel .burakuro-sound-value{width:3em;text-align:right;}',
+        '#burakuro-sound-panel .burakuro-sound-list{margin-top:8px;border-top:1px solid #333;padding-top:6px;max-height:300px;overflow-y:auto;}',
+        '#burakuro-sound-panel .burakuro-sound-list-title{font-size:12px;color:#aaa;margin-bottom:4px;}',
+        '#burakuro-sound-panel .burakuro-sound-row{display:flex;align-items:center;gap:6px;padding:2px 0;}',
+        '#burakuro-sound-panel .burakuro-sound-row img{width:32px;height:32px;object-fit:contain;flex:none;}',
+        '#burakuro-sound-panel .burakuro-sound-name{flex:1;min-width:0;text-align:left;background:none;border:0;color:#e6b422;font-size:12px;word-break:break-all;cursor:pointer;padding:0;}',
+        '#burakuro-sound-panel .burakuro-sound-name:hover{text-decoration:underline;}',
+        '#burakuro-sound-panel .burakuro-sound-try{flex:none;background:none;border:1px solid #555;border-radius:3px;color:#eee;font-size:11px;padding:1px 6px;cursor:pointer;}'
     ].join('');
     document.head.appendChild(style);
 
@@ -939,7 +946,7 @@ document.head.append(s)
     panel.id = 'burakuro-sound-panel';
     panel.hidden = true;
     panel.setAttribute('role', 'dialog');
-    panel.setAttribute('aria-label', 'Sound emote settings');
+    panel.setAttribute('aria-label', 'Sound emotes');
 
     var onLabel = document.createElement('label');
     var onBox = document.createElement('input');
@@ -965,10 +972,61 @@ document.head.append(s)
 
     panel.appendChild(onLabel);
     panel.appendChild(volumeRow);
+
+    // List of every sound emote: click the name = put it in the chat line; ▶ = hear it yourself only.
+    var listBox = document.createElement('div');
+    listBox.className = 'burakuro-sound-list';
+    panel.appendChild(listBox);
+    var previewAudio = null;
+    function renderList() {
+        listBox.textContent = '';
+        var title = document.createElement('div');
+        title.className = 'burakuro-sound-list-title';
+        title.textContent = 'Click a name to put it in chat. \u25B6 = hear it yourself.';
+        listBox.appendChild(title);
+        usableSounds.forEach(function (entry) {
+            var name = entryKey(entry);
+            var row = document.createElement('div');
+            row.className = 'burakuro-sound-row';
+            var img = document.createElement('img');
+            var src = entry.name ? lookImage(entry.look) : lookImage(entry.emote);
+            if (src) img.src = src;
+            img.alt = '';
+            var nameBtn = document.createElement('button');
+            nameBtn.type = 'button';
+            nameBtn.className = 'burakuro-sound-name';
+            nameBtn.textContent = name;
+            nameBtn.title = 'Put ' + name + ' in the chat line';
+            nameBtn.addEventListener('click', function () {
+                var line = document.getElementById('chatline');
+                if (!line) return;
+                var v = line.value;
+                line.value = v + (v && !/\s$/.test(v) ? ' ' : '') + name + ' ';
+                closePanel();
+                line.focus();
+            });
+            var tryBtn = document.createElement('button');
+            tryBtn.type = 'button';
+            tryBtn.className = 'burakuro-sound-try';
+            tryBtn.textContent = '\u25B6';
+            tryBtn.title = 'Hear ' + name + ' (only you)';
+            tryBtn.addEventListener('click', function () {
+                if (previewAudio) previewAudio.pause();
+                previewAudio = new Audio(entry.url);
+                previewAudio.volume = Math.max(0.05, settings.volume / 100);
+                var p = previewAudio.play();
+                if (p && p.catch) p.catch(function () {});
+            });
+            row.appendChild(img);
+            row.appendChild(nameBtn);
+            row.appendChild(tryBtn);
+            listBox.appendChild(row);
+        });
+    }
     document.body.appendChild(panel);
 
     function showSettings() {
-        button.textContent = settings.on ? ICON_ON : ICON_OFF;
+        button.textContent = (settings.on ? ICON_ON : ICON_OFF) + ' Sounds';
         button.title = 'Sound emotes: ' + (settings.on ? 'on' : 'off') + ', volume ' + settings.volume + '%';
         onBox.checked = settings.on;
         volumeSlider.value = String(settings.volume);
@@ -992,6 +1050,7 @@ document.head.append(s)
     }
 
     function openPanel() {
+        renderList();
         panel.hidden = false;
         button.setAttribute('aria-expanded', 'true');
         placePanel();

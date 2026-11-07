@@ -44,6 +44,80 @@ const listRe = /(    var SOUNDS = \[\n)[\s\S]*?(\n    \];)/;
 if (!listRe.test(sound)) throw new Error('SOUNDS list not found');
 sound = sound.replace(listRe, `$1${list}\n        // { emote: '/doroclap', url: 'https://files.catbox.moe/xxxxxx.mp3' },$2`);
 
+// burakuro additions to the sound block: "🔊 Sounds" button label + a clickable list of every sound emote in the panel.
+const patch = (from, to) => {
+    if (!sound.includes(from)) throw new Error('patch target not found: ' + from.slice(0, 60));
+    sound = sound.replace(from, to);
+};
+patch("button.textContent = settings.on ? ICON_ON : ICON_OFF;",
+    "button.textContent = (settings.on ? ICON_ON : ICON_OFF) + ' Sounds';");
+patch("'#burakuro-sound-panel{position:fixed;z-index:10000;width:200px;",
+    "'#burakuro-sound-panel{position:fixed;z-index:10000;width:300px;");
+patch("        '#burakuro-sound-panel .burakuro-sound-value{width:3em;text-align:right;}'",
+    "        '#burakuro-sound-panel .burakuro-sound-value{width:3em;text-align:right;}',\n" +
+    "        '#burakuro-sound-panel .burakuro-sound-list{margin-top:8px;border-top:1px solid #333;padding-top:6px;max-height:300px;overflow-y:auto;}',\n" +
+    "        '#burakuro-sound-panel .burakuro-sound-list-title{font-size:12px;color:#aaa;margin-bottom:4px;}',\n" +
+    "        '#burakuro-sound-panel .burakuro-sound-row{display:flex;align-items:center;gap:6px;padding:2px 0;}',\n" +
+    "        '#burakuro-sound-panel .burakuro-sound-row img{width:32px;height:32px;object-fit:contain;flex:none;}',\n" +
+    "        '#burakuro-sound-panel .burakuro-sound-name{flex:1;min-width:0;text-align:left;background:none;border:0;color:#e6b422;font-size:12px;word-break:break-all;cursor:pointer;padding:0;}',\n" +
+    "        '#burakuro-sound-panel .burakuro-sound-name:hover{text-decoration:underline;}',\n" +
+    "        '#burakuro-sound-panel .burakuro-sound-try{flex:none;background:none;border:1px solid #555;border-radius:3px;color:#eee;font-size:11px;padding:1px 6px;cursor:pointer;}'");
+patch("panel.setAttribute('aria-label', 'Sound emote settings');", "panel.setAttribute('aria-label', 'Sound emotes');");
+patch("    panel.appendChild(volumeRow);\n",
+    "    panel.appendChild(volumeRow);\n\n" +
+    "    // List of every sound emote: click the name = put it in the chat line; ▶ = hear it yourself only.\n" +
+    "    var listBox = document.createElement('div');\n" +
+    "    listBox.className = 'burakuro-sound-list';\n" +
+    "    panel.appendChild(listBox);\n" +
+    "    var previewAudio = null;\n" +
+    "    function renderList() {\n" +
+    "        listBox.textContent = '';\n" +
+    "        var title = document.createElement('div');\n" +
+    "        title.className = 'burakuro-sound-list-title';\n" +
+    "        title.textContent = 'Click a name to put it in chat. \\u25B6 = hear it yourself.';\n" +
+    "        listBox.appendChild(title);\n" +
+    "        usableSounds.forEach(function (entry) {\n" +
+    "            var name = entryKey(entry);\n" +
+    "            var row = document.createElement('div');\n" +
+    "            row.className = 'burakuro-sound-row';\n" +
+    "            var img = document.createElement('img');\n" +
+    "            var src = entry.name ? lookImage(entry.look) : lookImage(entry.emote);\n" +
+    "            if (src) img.src = src;\n" +
+    "            img.alt = '';\n" +
+    "            var nameBtn = document.createElement('button');\n" +
+    "            nameBtn.type = 'button';\n" +
+    "            nameBtn.className = 'burakuro-sound-name';\n" +
+    "            nameBtn.textContent = name;\n" +
+    "            nameBtn.title = 'Put ' + name + ' in the chat line';\n" +
+    "            nameBtn.addEventListener('click', function () {\n" +
+    "                var line = document.getElementById('chatline');\n" +
+    "                if (!line) return;\n" +
+    "                var v = line.value;\n" +
+    "                line.value = v + (v && !/\\s$/.test(v) ? ' ' : '') + name + ' ';\n" +
+    "                closePanel();\n" +
+    "                line.focus();\n" +
+    "            });\n" +
+    "            var tryBtn = document.createElement('button');\n" +
+    "            tryBtn.type = 'button';\n" +
+    "            tryBtn.className = 'burakuro-sound-try';\n" +
+    "            tryBtn.textContent = '\\u25B6';\n" +
+    "            tryBtn.title = 'Hear ' + name + ' (only you)';\n" +
+    "            tryBtn.addEventListener('click', function () {\n" +
+    "                if (previewAudio) previewAudio.pause();\n" +
+    "                previewAudio = new Audio(entry.url);\n" +
+    "                previewAudio.volume = Math.max(0.05, settings.volume / 100);\n" +
+    "                var p = previewAudio.play();\n" +
+    "                if (p && p.catch) p.catch(function () {});\n" +
+    "            });\n" +
+    "            row.appendChild(img);\n" +
+    "            row.appendChild(nameBtn);\n" +
+    "            row.appendChild(tryBtn);\n" +
+    "            listBox.appendChild(row);\n" +
+    "        });\n" +
+    "    }\n");
+patch("    function openPanel() {\n        panel.hidden = false;",
+    "    function openPanel() {\n        renderList();\n        panel.hidden = false;");
+
 const header = `/*! burakuro channel JavaScript: the WHOLE channel script lives in this one file.
  * cytu.be loads it from Channel settings → General settings → External Javascript:
  *   ${BASE}burakuro-extra.js

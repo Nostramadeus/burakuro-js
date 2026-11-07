@@ -41,5 +41,22 @@ check('/yamitakeabreaksound borrows /yamitakeabreak', names.includes('/yamitakea
 const live = code.slice(code.indexOf('var SOUNDS'), code.indexOf('];', code.indexOf('var SOUNDS'))).split('\n').filter(l => /^\s*\{/.test(l));
 check('14 live SOUNDS lines, all on GitHub Pages', live.length === 14 && live.every(l => l.includes("url: 'https://nostramadeus.github.io/burakuro-js/sounds/")), live);
 check('chat listener registered', (handlers.chatMsg || []).length >= 1);
+
+// Sound list in the 🔊 panel
+const btn = w.document.getElementById('burakuro-sound-btn');
+check('button says Sounds', !!btn && /Sounds$/.test(btn.textContent), btn && btn.textContent);
+btn.click();
+const panel = w.document.getElementById('burakuro-sound-panel');
+check('panel opens', !!panel && !panel.hidden);
+const rows = panel.querySelectorAll('.burakuro-sound-row');
+check('panel lists 14 sounds', rows.length === 14, rows.length);
+const first = rows[0].querySelector('.burakuro-sound-name');
+check('first row is /doroclapsound with a picture', first.textContent === '/doroclapsound' && !!rows[0].querySelector('img').getAttribute('src'));
+const line = w.document.getElementById('chatline'); line.value = 'hi';
+first.click();
+check('clicking a name puts it in the chat line', line.value === 'hi /doroclapsound ', line.value);
+check('panel closes after picking', panel.hidden);
+btn.click();
+check('re-open does not duplicate rows', panel.querySelectorAll('.burakuro-sound-row').length === 14);
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);
